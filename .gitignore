@@ -1,0 +1,42 @@
+# Python virtual environments
+venv/
+.venv/
+env/
+ENV/
+virtualenv/
+.env
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+.eggs/
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Project-specific directories
+outputs/
+inputs/*
+!inputs/sample_conversations.json
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Logs and temp files
+*.log
+.coverage
+coverage.xml
+*.cover
+.hypothesis/
