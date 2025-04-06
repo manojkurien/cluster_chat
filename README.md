@@ -29,16 +29,19 @@ pip install -r requirements.txt
 
 # Run the tool
 python cluster_conversations.py
+
+# Or run with sample data (easier for first-time users)
+python cluster_conversations.py --sample
 ```
 
 The tool will:
-1. Process files from the `inputs` directory
-2. Create a timestamped output directory with results
+1. Process files from the `inputs` directory (or `sample_input` when using --sample)
+2. Create output in a timestamped directory (`outputs/run_{timestamp}`) or in the `sample_output` directory (when using --sample)
 3. Generate visualizations and data exports
 
 ## 📊 Sample Data
 
-A sample dataset is included in `inputs/sample_conversations.json` for testing or as a template.
+A sample dataset is included in `sample_input/sample_conversations.json` for testing or as a template. Use the `--sample` flag to run the tool with this data.
 
 ## ⚙️ Configuration
 
@@ -51,14 +54,12 @@ Edit the `Config` class in `cluster_conversations.py` to customize:
 
 ```
 project/
-├── inputs/                           # Input files
+├── inputs/                           # Standard input files
+├── sample_input/                     # Sample input files for demo
 │   └── sample_conversations.json     # Sample template
 ├── outputs/                          # Generated results
 │   └── run_YYYY-MM-DD_HH-MM-SS/      # Timestamped run
-│       ├── clustered_conversations.csv
-│       ├── conversation_trends.png
-│       ├── conversation_histogram.png
-│       └── conversation_clusters_2D.png
+├── sample_output/                    # Sample output directory for demo
 └── cluster_conversations.py          # Main script
 ```
 

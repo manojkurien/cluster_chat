@@ -12,12 +12,6 @@ __pycache__/
 *$py.class
 .pytest_cache/
 
-# Distribution / packaging
-dist/
-build/
-*.egg-info/
-.eggs/
-
 # IDE files
 .idea/
 .vscode/
@@ -26,17 +20,8 @@ build/
 .DS_Store
 
 # Project-specific directories
-outputs/
+outputs/*
 inputs/*
-!inputs/sample_conversations.json
 
-# Jupyter Notebook
-.ipynb_checkpoints
-*.ipynb
-
-# Logs and temp files
-*.log
-.coverage
-coverage.xml
-*.cover
-.hypothesis/
+# Sample output - track directory but ignore contents
+sample_output/*

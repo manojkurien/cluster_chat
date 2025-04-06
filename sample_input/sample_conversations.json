@@ -1,0 +1,1291 @@
+[
+  {
+    "conversation_id": "sample_conversation_1",
+    "title": "Python Programming Tips",
+    "create_time": 1640995200,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "What are some best practices for Python error handling?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "Here are some Python error handling best practices..."
+            ]
+          }
+        }
+      },
+      "node_3": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "Can you show me an example of using try/except blocks properly?"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_2",
+    "title": "Data Visualization with Matplotlib",
+    "create_time": 1651795200,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "How do I create a scatter plot with Matplotlib that shows correlation between two variables?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "To create a scatter plot with Matplotlib..."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_3",
+    "title": "Machine Learning Basics",
+    "create_time": 1662076800,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "What's the difference between supervised and unsupervised learning?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "The main difference between supervised and unsupervised learning is..."
+            ]
+          }
+        }
+      },
+      "node_3": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "Can you give examples of algorithms for each type of learning?"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_4",
+    "title": "API Development",
+    "create_time": 1672531200,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "How do I design a RESTful API that follows best practices?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "When designing a RESTful API, you should follow these principles..."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_5",
+    "title": "Web Development Frameworks",
+    "create_time": 1683158400,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "What are the pros and cons of React vs Angular for frontend development?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "Comparing React and Angular..."
+            ]
+          }
+        }
+      },
+      "node_3": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "For a small team building a new app, which would you recommend?"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_6",
+    "title": "Database Design Principles",
+    "create_time": 1654387200,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "What are the key differences between SQL and NoSQL databases?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "SQL and NoSQL databases differ in several key ways..."
+            ]
+          }
+        }
+      },
+      "node_3": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "When would you choose MongoDB over PostgreSQL for a project?"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_7",
+    "title": "Cloud Computing Services",
+    "create_time": 1667260800,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "How do AWS Lambda functions compare to traditional server deployments?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "AWS Lambda functions are serverless computing services that differ from traditional servers in several ways..."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_8",
+    "title": "Natural Language Processing",
+    "create_time": 1675900800,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "What techniques are used for sentiment analysis in NLP?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "Sentiment analysis in NLP uses several techniques including..."
+            ]
+          }
+        }
+      },
+      "node_3": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "How accurate are these methods compared to human judgment?"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_9",
+    "title": "Mobile App Development",
+    "create_time": 1642550400,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "Should I use React Native or Flutter for cross-platform mobile development?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "When choosing between React Native and Flutter..."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_10",
+    "title": "Software Design Patterns",
+    "create_time": 1657152000,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "What is the MVC architecture pattern and when should it be used?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "MVC (Model-View-Controller) is an architectural pattern that..."
+            ]
+          }
+        }
+      },
+      "node_3": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "How does it compare to MVVM pattern?"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_11",
+    "title": "Computer Vision Techniques",
+    "create_time": 1659744000,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "What are the most effective CNN architectures for object detection?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "For object detection, several CNN architectures have proven effective..."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_12",
+    "title": "DevOps Best Practices",
+    "create_time": 1680480000,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "What are the key principles of CI/CD pipelines?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "CI/CD (Continuous Integration/Continuous Deployment) pipelines are built on several key principles..."
+            ]
+          }
+        }
+      },
+      "node_3": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "Which tools would you recommend for implementing CI/CD for a small team?"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_13",
+    "title": "Cybersecurity Fundamentals",
+    "create_time": 1646092800,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "What are the most common web application security vulnerabilities?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "The most common web application security vulnerabilities include..."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_14",
+    "title": "Data Science Project Workflow",
+    "create_time": 1685750400,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "How should I structure a data science project from start to finish?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "A well-structured data science project typically follows these steps..."
+            ]
+          }
+        }
+      },
+      "node_3": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "What tools should I use for version control of my datasets and models?"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_15",
+    "title": "Blockchain Technology",
+    "create_time": 1649289600,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "How does a blockchain consensus mechanism work?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "Blockchain consensus mechanisms are protocols that ensure all nodes in the network agree on the validity of transactions..."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_16",
+    "title": "Python Advanced Features",
+    "create_time": 1643846400,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "How can I use decorators effectively in Python?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "Decorators in Python are a powerful way to modify the behavior of functions or methods..."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_17",
+    "title": "Data Visualization Comparisons",
+    "create_time": 1651968000,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "When should I use Seaborn instead of Matplotlib for data visualization?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "Seaborn is built on top of Matplotlib and provides a higher-level interface..."
+            ]
+          }
+        }
+      },
+      "node_3": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "Can you show me an example of creating the same visualization in both libraries?"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_18",
+    "title": "Machine Learning Model Evaluation",
+    "create_time": 1662163200,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "What metrics should I use to evaluate a classification model?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "When evaluating classification models, you should consider several metrics including..."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_19",
+    "title": "REST API Authentication",
+    "create_time": 1672704000,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "What are the best practices for implementing JWT authentication in a REST API?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "When implementing JWT (JSON Web Token) authentication in REST APIs, follow these best practices..."
+            ]
+          }
+        }
+      },
+      "node_3": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "How should I handle token refresh and expiration?"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_20",
+    "title": "React Performance Optimization",
+    "create_time": 1683244800,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "How can I optimize the performance of a React application?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "To optimize a React application's performance, consider these strategies..."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_21",
+    "title": "Database Indexing Strategies",
+    "create_time": 1654473600,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "How should I approach database indexing to improve query performance?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "Effective database indexing requires understanding your query patterns..."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_22",
+    "title": "AWS S3 Best Practices",
+    "create_time": 1667347200,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "What are the best practices for organizing data in AWS S3 buckets?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "When organizing data in AWS S3 buckets, consider these best practices..."
+            ]
+          }
+        }
+      },
+      "node_3": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "How should I configure lifecycle policies for cost optimization?"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_23",
+    "title": "NLP Preprocessing Techniques",
+    "create_time": 1675987200,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "What text preprocessing steps should I apply before training an NLP model?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "Text preprocessing for NLP models typically involves several key steps..."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_24",
+    "title": "Flutter State Management",
+    "create_time": 1642636800,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "What are the different approaches to state management in Flutter apps?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "Flutter offers several approaches to state management, including..."
+            ]
+          }
+        }
+      },
+      "node_3": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "Which one would you recommend for a large-scale application?"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_25",
+    "title": "Software Design Principles",
+    "create_time": 1657238400,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "Can you explain the SOLID principles in software design?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "The SOLID principles are a set of five design principles in object-oriented programming..."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_26",
+    "title": "Image Recognition Techniques",
+    "create_time": 1659830400,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "How has transfer learning improved image recognition tasks?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "Transfer learning has significantly improved image recognition by..."
+            ]
+          }
+        }
+      },
+      "node_3": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "What are the most commonly used pre-trained models for this purpose?"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_27",
+    "title": "Docker Container Orchestration",
+    "create_time": 1680566400,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "What are the advantages of using Kubernetes over Docker Swarm for container orchestration?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "Kubernetes offers several advantages over Docker Swarm for container orchestration..."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_28",
+    "title": "Web Security Headers",
+    "create_time": 1646179200,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "What HTTP security headers should I implement in my web application?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "To enhance the security of your web application, consider implementing these HTTP security headers..."
+            ]
+          }
+        }
+      },
+      "node_3": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "How do I properly configure Content Security Policy without breaking functionality?"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_29",
+    "title": "Feature Engineering Techniques",
+    "create_time": 1685836800,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "What are some effective feature engineering techniques for tabular data?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "For tabular data, these feature engineering techniques often yield good results..."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_30",
+    "title": "Smart Contract Development",
+    "create_time": 1649376000,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "What security considerations should I keep in mind when developing Ethereum smart contracts?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "When developing Ethereum smart contracts, be mindful of these security considerations..."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_31",
+    "title": "Python Concurrency",
+    "create_time": 1644451200,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "What's the difference between threading, multiprocessing, and asyncio in Python?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "Python offers three main approaches to concurrency and parallelism..."
+            ]
+          }
+        }
+      },
+      "node_3": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "When should I use one over the others?"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_32",
+    "title": "Interactive Data Visualization",
+    "create_time": 1652054400,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "How can I create interactive dashboards with Plotly and Dash?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "To create interactive dashboards with Plotly and Dash, follow these steps..."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_33",
+    "title": "Machine Learning Model Deployment",
+    "create_time": 1662249600,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "What are the best practices for deploying machine learning models to production?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "When deploying machine learning models to production, consider these best practices..."
+            ]
+          }
+        }
+      },
+      "node_3": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "How should I monitor model performance over time?"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_34",
+    "title": "API Versioning Strategies",
+    "create_time": 1672790400,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "What are different approaches to versioning REST APIs?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "There are several approaches to versioning REST APIs, each with pros and cons..."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "conversation_id": "sample_conversation_35",
+    "title": "State Management in Angular",
+    "create_time": 1683331200,
+    "mapping": {
+      "node_1": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "How should I manage state in a large Angular application?"
+            ]
+          }
+        }
+      },
+      "node_2": {
+        "message": {
+          "author": {
+            "role": "assistant"
+          },
+          "content": {
+            "parts": [
+              "For large Angular applications, there are several approaches to state management..."
+            ]
+          }
+        }
+      },
+      "node_3": {
+        "message": {
+          "author": {
+            "role": "user"
+          },
+          "content": {
+            "parts": [
+              "When should I use NgRx versus a simpler solution?"
+            ]
+          }
+        }
+      }
+    }
+  }
+] 
