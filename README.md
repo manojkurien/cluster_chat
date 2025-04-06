@@ -45,15 +45,21 @@ A sample dataset is included in `sample_input/sample_conversations.json` for tes
 
 ## ⚙️ Configuration
 
-Edit the `Config` class in `cluster_conversations.py` to customize:
+The `Config` class in the `config` module handles all configuration settings. To customize:
+
 - Input/output directories
 - Clustering parameters
 - Visualization settings
+
+Edit the `config/config.py` file to adjust these settings.
 
 ## 📁 Directory Structure
 
 ```
 project/
+├── config/                           # Configuration module
+│   ├── __init__.py                   # Module initialization
+│   └── config.py                     # Configuration class definition
 ├── inputs/                           # Standard input files
 ├── loaders/                          # Data loader modules
 │   ├── __init__.py                   # Module initialization
