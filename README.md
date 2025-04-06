@@ -63,6 +63,8 @@ project/
 └── cluster_conversations.py          # Main script
 ```
 
+> **Note:** The `inputs` and `outputs` directories are designed to be git-ignored, making it easy to exclude both your personal conversation data and all generated analysis files from version control.
+
 ## 📋 Output Files
 
 The tool generates several outputs:
