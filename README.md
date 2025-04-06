@@ -91,6 +91,42 @@ class MyFormatLoader(ConversationLoader):
 
 Then register your loader in the `get_loader` function.
 
+## 🤖 ChatGPT Conversations Format
+
+The tool is compatible with the ChatGPT conversation export format. To use your ChatGPT conversations:
+
+1. Export your data from [chat.openai.com](https://chat.openai.com/)
+2. Place the `conversations.json` file in the `inputs` directory
+
+The expected JSON structure is:
+```json
+[
+  {
+    "conversation_id": "conversation_id_string",
+    "title": "Conversation Title",
+    "create_time": 1677649200,  // Unix timestamp
+    "mapping": {
+      "node_1": {  // uuid of a node in this conversation
+        "message": {
+          "author": {
+            "role": "user"  // or "assistant"
+          },
+          "content": {
+            "parts": [
+              "Message text content here"
+            ]
+          }
+        }
+      },
+      // More messages...
+    }
+  },
+  // More conversations...
+]
+```
+
+The loader automatically extracts all relevant data from this structure to analyze your ChatGPT conversations.
+
 ## 📄 License
 
 MIT License - See [LICENSE](LICENSE) file for details.
