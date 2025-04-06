@@ -55,6 +55,11 @@ Edit the `Config` class in `cluster_conversations.py` to customize:
 ```
 project/
 ├── inputs/                           # Standard input files
+├── loaders/                          # Data loader modules
+│   ├── __init__.py                   # Module initialization
+│   ├── base.py                       # Base loader interface
+│   ├── chatgpt.py                    # ChatGPT loader implementation
+│   └── factory.py                    # Loader factory and validation
 ├── sample_input/                     # Sample input files for demo
 │   └── sample_conversations.json     # Sample template
 ├── outputs/                          # Generated results
@@ -77,9 +82,15 @@ The tool generates several outputs:
 Implement the `ConversationLoader` interface to support additional data formats:
 
 ```python
+# In a new file in the loaders directory, e.g. loaders/my_format.py
+from typing import Any, Dict, List
+import pandas as pd
+from loaders.base import ConversationLoader
+
 class MyFormatLoader(ConversationLoader):
     def load_data(self, files: List[str]) -> List[Dict[str, Any]]:
         # Load raw data from files
+        pass
         
     def process_data(self, raw_data: List[Dict[str, Any]]) -> pd.DataFrame:
         # Process the raw data into a structured DataFrame
@@ -87,9 +98,22 @@ class MyFormatLoader(ConversationLoader):
         # - conversation_id: Unique identifier
         # - text: Text content for analysis
         # - create_time: Unix timestamp
+        pass
 ```
 
-Then register your loader in the `get_loader` function.
+Then register your loader in the factory.py file:
+
+```python
+# In loaders/factory.py
+from loaders.my_format import MyFormatLoader
+
+def get_loader(format_name: str) -> ConversationLoader:
+    loaders = {
+        "chatgpt": ChatGPTLoader,
+        "my_format": MyFormatLoader,  # Add your new loader here
+    }
+    # ...
+```
 
 ## 🤖 ChatGPT Conversations Format
 
