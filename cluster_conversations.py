@@ -41,25 +41,17 @@ from loaders import ConversationLoader, get_loader, validate_dataframe
 # Import the Config class from the config module
 from config import Config
 
+# Import clustering functionality from the clustering module
+from clustering import (
+    get_embeddings,
+    find_optimal_clusters,
+    perform_clustering,
+    extract_cluster_keywords,
+    generate_cluster_titles
+)
 
 # === CONFIGURATION ===
 # The Config class has been moved to the config module
-
-def get_embeddings(texts: list[str], model_name: str) -> np.ndarray:
-    """
-    Generate embeddings for a list of texts using sentence transformers.
-    
-    Args:
-        texts: List of text strings to embed
-        model_name: Name of the sentence transformer model to use
-        
-    Returns:
-        Array of embeddings
-    """
-    model = SentenceTransformer(model_name)
-    embeddings = model.encode(texts, show_progress_bar=True)
-    return np.array(embeddings)
-
 
 def prepare_time_features(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -94,141 +86,6 @@ def create_trend_df(df: pd.DataFrame) -> pd.DataFrame:
         aggfunc="count",
         fill_value=0
     )
-
-
-# === CLUSTERING AND ANALYSIS ===
-def find_optimal_clusters(embeddings: np.ndarray, min_clusters: int, max_clusters: int, random_seed: int) -> tuple[int, list[float]]:
-    """
-    Find the optimal number of clusters using silhouette scores, respecting a minimum cluster constraint.
-    
-    Args:
-        embeddings: Text embeddings
-        min_clusters: Minimum number of clusters to consider
-        max_clusters: Maximum number of clusters to try
-        random_seed: Random seed for reproducibility
-        
-    Returns:
-        Tuple of (optimal number of clusters, list of silhouette scores)
-    """
-    silhouette_scores = []
-    cluster_range = range(min_clusters, max_clusters + 1)
-    
-    print(f"Calculating silhouette scores for {min_clusters} to {max_clusters} clusters...")
-    for k in tqdm(cluster_range):
-        kmeans = KMeans(n_clusters=k, random_state=random_seed, n_init="auto")
-        cluster_labels = kmeans.fit_predict(embeddings)
-        score = silhouette_score(embeddings, cluster_labels)
-        silhouette_scores.append(score)
-    
-    # Find the best silhouette score
-    best_idx = np.argmax(silhouette_scores)
-    optimal_k = cluster_range[best_idx]
-    
-    print(f"Best silhouette score: {silhouette_scores[best_idx]:.4f} with {optimal_k} clusters")
-    
-    return optimal_k, silhouette_scores
-
-
-def extract_cluster_keywords(df: pd.DataFrame, n_keywords: int = 10) -> dict[int, list[str]]:
-    """
-    Extract the most representative keywords for each cluster.
-    
-    This function uses TF-IDF vectorization to identify the most important terms
-    for each cluster.
-    
-    Args:
-        df: DataFrame with processed conversation data and cluster assignments
-        n_keywords: Number of keywords to extract for each cluster (default: 10)
-        
-    Returns:
-        Dictionary mapping cluster IDs to lists of representative keywords
-    """
-    # Prepare corpus for TF-IDF
-    texts = df["text"].tolist()
-    
-    # Create and fit TF-IDF vectorizer
-    # We filter out very common and very rare words
-    tfidf = TfidfVectorizer(
-        min_df=2,         # Ignore terms that appear in fewer than 2 documents
-        max_df=0.7,       # Ignore terms that appear in more than 70% of documents
-        stop_words='english',  # Remove English stopwords
-        ngram_range=(1, 2)     # Consider both unigrams and bigrams
-    )
-    tfidf_matrix = tfidf.fit_transform(texts)
-    
-    # Get feature names (words)
-    feature_names = np.array(tfidf.get_feature_names_out())
-    
-    # Extract keywords for each cluster
-    keywords_by_cluster = {}
-    
-    for cluster_id in sorted(df["cluster"].unique()):
-        # Get indices of conversations in this cluster
-        cluster_indices = df[df["cluster"] == cluster_id].index
-        
-        if len(cluster_indices) == 0:
-            keywords_by_cluster[cluster_id] = []
-            continue
-            
-        # Get TF-IDF vectors for documents in this cluster
-        cluster_tfidf = tfidf_matrix[cluster_indices]
-        
-        # Calculate average TF-IDF scores for each term in this cluster
-        avg_tfidf = cluster_tfidf.mean(axis=0).A1
-        
-        # Get the top N keywords based on average TF-IDF score
-        top_indices = avg_tfidf.argsort()[-n_keywords:][::-1]
-        top_keywords = feature_names[top_indices]
-        
-        # Store keywords for this cluster
-        keywords_by_cluster[cluster_id] = list(top_keywords)
-    
-    return keywords_by_cluster
-
-
-def generate_cluster_titles(keywords_by_cluster: dict[int, list[str]], title_keywords: int = 3) -> dict[int, str]:
-    """
-    Generate descriptive titles for clusters based on extracted keywords.
-    
-    Args:
-        keywords_by_cluster: Dictionary mapping cluster IDs to keyword lists
-        title_keywords: Number of keywords to use in the title (default: 3)
-        
-    Returns:
-        Dictionary mapping cluster IDs to descriptive titles
-    """
-    titles = {}
-    
-    for cluster_id, keywords in keywords_by_cluster.items():
-        if not keywords:
-            titles[cluster_id] = f"Empty Cluster {cluster_id}"
-            continue
-            
-        # Create a title from the top keywords (limited to title_keywords)
-        title_words = keywords[:title_keywords]
-        title = " & ".join(title_words).title()
-        
-        # Add the title to the dictionary
-        titles[cluster_id] = title
-    
-    return titles
-
-
-def perform_clustering(embeddings: np.ndarray, num_clusters: int, random_seed: int) -> KMeans:
-    """
-    Perform K-means clustering on the embeddings.
-    
-    Args:
-        embeddings: Text embeddings
-        num_clusters: Number of clusters
-        random_seed: Random seed for reproducibility
-        
-    Returns:
-        Fitted KMeans model
-    """
-    kmeans = KMeans(n_clusters=num_clusters, random_state=random_seed, n_init="auto")
-    kmeans.fit(embeddings)
-    return kmeans
 
 
 # === VISUALIZATION FUNCTIONS ===

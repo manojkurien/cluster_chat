@@ -60,12 +60,21 @@ project/
 ├── config/                           # Configuration module
 │   ├── __init__.py                   # Module initialization
 │   └── config.py                     # Configuration class definition
+├── clustering/                       # Clustering module
+│   ├── __init__.py                   # Module initialization
+│   ├── embeddings.py                 # Text embedding functions
+│   ├── kmeans.py                     # K-means clustering implementation
+│   ├── analysis.py                   # Cluster analysis and interpretation
+│   └── README.md                     # Clustering module documentation
 ├── inputs/                           # Standard input files
 ├── loaders/                          # Data loader modules
 │   ├── __init__.py                   # Module initialization
 │   ├── base.py                       # Base loader interface
 │   ├── chatgpt.py                    # ChatGPT loader implementation
 │   └── factory.py                    # Loader factory and validation
+├── tests/                            # Unit tests
+│   ├── __init__.py                   # Test package initialization
+│   └── test_clustering.py            # Tests for clustering module
 ├── sample_input/                     # Sample input files for demo
 │   └── sample_conversations.json     # Sample template
 ├── outputs/                          # Generated results
@@ -160,3 +169,31 @@ The loader automatically extracts all relevant data from this structure to analy
 ## 📄 License
 
 MIT License - See [LICENSE](LICENSE) file for details.
+
+## 🧪 Running Tests
+
+The project includes unit tests to verify functionality:
+
+```bash
+# Run all tests
+python -m unittest discover
+
+# Run specific test module
+python -m unittest tests/test_clustering.py
+```
+
+## 🧩 Module Structure
+
+### Clustering Module
+
+The `clustering` module handles conversation embedding and clustering functionality:
+
+- `embeddings.py`: Generates vector representations of text using sentence transformers
+- `kmeans.py`: Performs K-means clustering and finds optimal number of clusters
+- `analysis.py`: Extracts representative keywords and generates topic titles
+
+This modular design makes the code more maintainable and allows components to be reused in other projects.
+
+### Loaders Module
+
+The `loaders` module provides a flexible interface for loading conversation data:
