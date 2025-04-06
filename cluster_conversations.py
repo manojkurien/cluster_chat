@@ -13,7 +13,7 @@ import json
 import os
 import argparse
 from datetime import datetime
-from typing import List, Dict, Any, Tuple, Optional, Callable
+from typing import Any, Optional, Callable
 from abc import ABC, abstractmethod
 
 # Data processing imports
@@ -108,7 +108,7 @@ class Config:
         # Create input directory if it doesn't exist
         os.makedirs(self.INPUT_DIR, exist_ok=True)
         
-    def get_input_files(self) -> List[str]:
+    def get_input_files(self) -> list[str]:
         """Get all files in the input directory."""
         # Get all files in the input directory
         all_files = [os.path.join(self.INPUT_DIR, f) for f in os.listdir(self.INPUT_DIR) 
@@ -135,7 +135,7 @@ class ConversationLoader(ABC):
     """
     
     @abstractmethod
-    def load_data(self, files: List[str]) -> List[Dict[str, Any]]:
+    def load_data(self, files: list[str]) -> list[dict[str, Any]]:
         """
         Load conversation data from files.
         
@@ -151,7 +151,7 @@ class ConversationLoader(ABC):
         pass
     
     @abstractmethod
-    def process_data(self, raw_data: List[Dict[str, Any]]) -> pd.DataFrame:
+    def process_data(self, raw_data: list[dict[str, Any]]) -> pd.DataFrame:
         """
         Process raw data into a structured DataFrame for analysis.
         
@@ -184,7 +184,7 @@ class ConversationLoader(ABC):
 class ChatGPTLoader(ConversationLoader):
     """Data loader for ChatGPT conversation exports."""
     
-    def load_data(self, files: List[str]) -> List[Dict[str, Any]]:
+    def load_data(self, files: list[str]) -> list[dict[str, Any]]:
         """
         Load conversation data from ChatGPT JSON files.
         
@@ -207,7 +207,7 @@ class ChatGPTLoader(ConversationLoader):
                 print(f"Warning: Error loading {os.path.basename(path)}: {str(e)}")
         return conversations
     
-    def _extract_user_messages(self, mapping: Dict[str, Any]) -> List[str]:
+    def _extract_user_messages(self, mapping: dict[str, Any]) -> list[str]:
         """
         Extract all user messages from a ChatGPT conversation export.
         
@@ -236,7 +236,7 @@ class ChatGPTLoader(ConversationLoader):
                     user_texts.append(text)
         return user_texts
     
-    def process_data(self, raw_data: List[Dict[str, Any]]) -> pd.DataFrame:
+    def process_data(self, raw_data: list[dict[str, Any]]) -> pd.DataFrame:
         """
         Process ChatGPT conversation export data into a structured DataFrame.
         
@@ -294,7 +294,7 @@ def get_loader(format_name: str) -> ConversationLoader:
     return loaders[format_name]()
 
 
-def validate_dataframe(df: pd.DataFrame) -> Tuple[bool, str]:
+def validate_dataframe(df: pd.DataFrame) -> tuple[bool, str]:
     """
     Validate that a DataFrame has the required structure for analysis.
     
@@ -338,7 +338,7 @@ def validate_dataframe(df: pd.DataFrame) -> Tuple[bool, str]:
     return True, ""
 
 
-def get_embeddings(texts: List[str], model_name: str) -> np.ndarray:
+def get_embeddings(texts: list[str], model_name: str) -> np.ndarray:
     """
     Generate embeddings for a list of texts using sentence transformers.
     
@@ -390,7 +390,7 @@ def create_trend_df(df: pd.DataFrame) -> pd.DataFrame:
 
 
 # === CLUSTERING AND ANALYSIS ===
-def find_optimal_clusters(embeddings: np.ndarray, min_clusters: int, max_clusters: int, random_seed: int) -> Tuple[int, List[float]]:
+def find_optimal_clusters(embeddings: np.ndarray, min_clusters: int, max_clusters: int, random_seed: int) -> tuple[int, list[float]]:
     """
     Find the optimal number of clusters using silhouette scores, respecting a minimum cluster constraint.
     
@@ -422,7 +422,7 @@ def find_optimal_clusters(embeddings: np.ndarray, min_clusters: int, max_cluster
     return optimal_k, silhouette_scores
 
 
-def extract_cluster_keywords(df: pd.DataFrame, n_keywords: int = 10) -> Dict[int, List[str]]:
+def extract_cluster_keywords(df: pd.DataFrame, n_keywords: int = 10) -> dict[int, list[str]]:
     """
     Extract the most representative keywords for each cluster.
     
@@ -479,7 +479,7 @@ def extract_cluster_keywords(df: pd.DataFrame, n_keywords: int = 10) -> Dict[int
     return keywords_by_cluster
 
 
-def generate_cluster_titles(keywords_by_cluster: Dict[int, List[str]], title_keywords: int = 3) -> Dict[int, str]:
+def generate_cluster_titles(keywords_by_cluster: dict[int, list[str]], title_keywords: int = 3) -> dict[int, str]:
     """
     Generate descriptive titles for clusters based on extracted keywords.
     
@@ -525,7 +525,7 @@ def perform_clustering(embeddings: np.ndarray, num_clusters: int, random_seed: i
 
 
 # === VISUALIZATION FUNCTIONS ===
-def setup_plot(figsize: Tuple[int, int], title: str, xlabel: str, ylabel: str) -> Tuple[Figure, Axes]:
+def setup_plot(figsize: tuple[int, int], title: str, xlabel: str, ylabel: str) -> tuple[Figure, Axes]:
     """
     Set up a matplotlib figure and axes with common styling.
     
@@ -567,7 +567,7 @@ def save_plot(fig: Figure, ax: Axes, output_path: str, config: Config, add_foote
     plt.close(fig)  # Close the figure to free memory
 
 
-def plot_silhouette_scores(cluster_range: range, scores: List[float], output_path: str, config: Config) -> None:
+def plot_silhouette_scores(cluster_range: range, scores: list[float], output_path: str, config: Config) -> None:
     """
     Plot silhouette scores for different numbers of clusters.
     
@@ -630,7 +630,7 @@ def plot_monthly_totals(trend_df: pd.DataFrame, output_path: str, smoothing_sigm
     save_plot(fig, ax, output_path, config)
 
 
-def plot_trend_percentages(trend_df: pd.DataFrame, cluster_titles: Dict[int, str], 
+def plot_trend_percentages(trend_df: pd.DataFrame, cluster_titles: dict[int, str], 
                           output_path: str, smoothing_sigma: float, config: Config) -> None:
     """
     Plot trend lines showing percentage of conversations per cluster over time.
@@ -670,7 +670,7 @@ def plot_trend_percentages(trend_df: pd.DataFrame, cluster_titles: Dict[int, str
     save_plot(fig, ax, output_path, config)
 
 
-def plot_topic_distribution(df: pd.DataFrame, cluster_titles: Dict[int, str], output_path: str, config: Config) -> None:
+def plot_topic_distribution(df: pd.DataFrame, cluster_titles: dict[int, str], output_path: str, config: Config) -> None:
     """
     Plot histogram showing distribution of conversations across topics.
     
@@ -717,7 +717,7 @@ def plot_topic_distribution(df: pd.DataFrame, cluster_titles: Dict[int, str], ou
 
 
 def plot_cluster_visualization(df: pd.DataFrame, embeddings: np.ndarray, 
-                              kmeans: KMeans, cluster_titles: Dict[int, str],
+                              kmeans: KMeans, cluster_titles: dict[int, str],
                               output_path: str, config: Config) -> None:
     """
     Create 2D visualization of conversation clusters using PCA.
@@ -770,7 +770,7 @@ def plot_cluster_visualization(df: pd.DataFrame, embeddings: np.ndarray,
     save_plot(fig, ax, output_path, config)
 
 
-def export_cluster_info_for_external_titling(df: pd.DataFrame, keywords_by_cluster: Dict[int, List[str]], config: Config) -> None:
+def export_cluster_info_for_external_titling(df: pd.DataFrame, keywords_by_cluster: dict[int, list[str]], config: Config) -> None:
     """
     Export cluster information to a CSV file for external title generation.
     
@@ -812,7 +812,7 @@ def export_cluster_info_for_external_titling(df: pd.DataFrame, keywords_by_clust
 
 
 def analyze_and_visualize_clusters(df: pd.DataFrame, embeddings: np.ndarray, kmeans: KMeans, 
-                                  cluster_titles: Dict[int, str], keywords_by_cluster: Dict[int, List[str]], 
+                                  cluster_titles: dict[int, str], keywords_by_cluster: dict[int, list[str]], 
                                   config: Config) -> None:
     """
     Analyze clusters and generate visualizations.
