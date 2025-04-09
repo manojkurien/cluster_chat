@@ -1,12 +1,12 @@
-# Conversation Analysis Tool
+# Conversation Analysis Tool (for ChatGPT and others!)
 
-A tool for analyzing conversation history by clustering topics and visualizing trends.
+A tool for analyzing conversation history by clustering topics and visualizing trends. I used it for ChatGPT chat history, but it can be easily extended to any other files. 
 
 ## 📝 Featured In
 
 <div align="center">
   <a href="https://muddlemap.substack.com/p/what-i-learned-from-analyzing-2-years" target="_blank">
-    <img src="https://img.shields.io/badge/Blog-Read%20the%20Detailed%20Tutorial-blue?style=for-the-badge" alt="Read the Blog" />
+    <img src="https://img.shields.io/badge/Blog-Read%20the%20Detailed%20Tutorial-blue?style=for-the-badge" alt="Read the Blog!" />
   </a>
   
   <a href="https://www.linkedin.com/posts/manojkurien1_what-i-learned-from-analyzing-2-years-of-activity-7313825166885568512-ac85?utm_source=share&utm_medium=member_desktop&rcm=ACoAABtF5ukBcRFWTr7DSFDFQ8nfIva8QIdeB4o" target="_blank">
