@@ -58,23 +58,13 @@ Edit the `config/config.py` file to adjust these settings.
 ```
 project/
 ├── config/                           # Configuration module
-│   ├── __init__.py                   # Module initialization
-│   └── config.py                     # Configuration class definition
 ├── clustering/                       # Clustering module
-│   ├── __init__.py                   # Module initialization
-│   ├── embeddings.py                 # Text embedding functions
-│   ├── kmeans.py                     # K-means clustering implementation
-│   ├── analysis.py                   # Cluster analysis and interpretation
-│   └── README.md                     # Clustering module documentation
 ├── inputs/                           # Standard input files
 ├── loaders/                          # Data loader modules
-│   ├── __init__.py                   # Module initialization
 │   ├── base.py                       # Base loader interface
 │   ├── chatgpt.py                    # ChatGPT loader implementation
 │   └── factory.py                    # Loader factory and validation
 ├── tests/                            # Unit tests
-│   ├── __init__.py                   # Test package initialization
-│   └── test_clustering.py            # Tests for clustering module
 ├── sample_input/                     # Sample input files for demo
 │   └── sample_conversations.json     # Sample template
 ├── outputs/                          # Generated results
